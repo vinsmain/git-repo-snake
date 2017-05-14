@@ -24,13 +24,13 @@ public class FieldFrame extends Application {
         snakeController.initField();
         snakeController.initSnakeHead();
         snakeController.initSnakeTail();
+        snakeController.initFruit();
 
         new Thread(new Runnable() {
             @Override
             public void run() {
                 try {
-                    while (snakeController.getColumnIndex() > 0 && snakeController.getColumnIndex() < 20 && snakeController.getRowIndex() > 0 && snakeController.getRowIndex() < 20 ){
-                        //snakeController.getFieldGP().getChildren().clear();
+                    while (snakeController.getColumnIndex() >= 0 && snakeController.getColumnIndex() <= 16 && snakeController.getRowIndex() >= 0 && snakeController.getRowIndex() <= 16 ){
                         snakeController.move();
                         Thread.sleep(500);
                     }
